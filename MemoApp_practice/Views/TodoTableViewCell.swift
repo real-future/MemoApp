@@ -10,31 +10,18 @@ import UIKit//commit
 
 class TodoTableViewCell: UITableViewCell {
   
-    
-    var todo: Todo?
-    
 
     
-    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var todoLabel: UILabel!
     
     @IBOutlet weak var todoSubLabel: UILabel!
     
-    @IBAction func pressedButton(_ sender: Any) {
-//        guard let todo else { return }
-//        if mainButton.isTouchInside {
-//            todoLabel.textColor = .gray
-//            mainButton.
-//
-//
-        }
+ 
+    var todo: Todo?
     
-    
-    
-    
-    
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,5 +33,38 @@ class TodoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func pressedButton(_ sender: Any) {
+        print(#function)
+
+        //isCompleted
+//            guard let todo else { return }
+//
+//            if todo.isCompleted == false {
+//                doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+//                TodoList.completeTodo(todo: todo, isComplete: true)
+//
+//            } else {
+//                doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
+//                TodoList.completeTodo(todo: todo, isComplete: false)
+//
+//            }
+
+        
+        
+        
+        doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        todoLabel.textColor = UIColor.lightGray
+
+        todoSubLabel.textColor = UIColor.lightGray
+        
+        
+    }
+    
+    
+    
+    
+    
+
 
 }

@@ -15,6 +15,7 @@ struct TodoList {
         Todo(id: 1, content: "꼭 완성한다. 꼭.", doneDate: Date(), isCompleted: true)
     ]
     
+    
     static func completeList() -> [Todo] {
         return list.filter { $0.isCompleted == true }
     }
@@ -23,6 +24,7 @@ struct TodoList {
         for index in 0 ..< list.count {
             if list[index].id == todo.id {
                 list[index].content = todo.content
+                list[index].isCompleted = isComplete
             }
         }
     }

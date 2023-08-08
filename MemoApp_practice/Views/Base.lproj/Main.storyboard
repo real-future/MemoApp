@@ -95,7 +95,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
                                                     <connections>
-                                                        <action selector="pressedButton:" destination="l1U-Q8-Dwz" eventType="touchUpInside" id="e3D-aB-8RM"/>
+                                                        <action selector="pressedButton:" destination="l1U-Q8-Dwz" eventType="touchUpInside" id="Lcu-ln-hq5"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uF6-Le-uNU">
@@ -128,7 +128,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="mainButton" destination="CMd-VO-hft" id="Hvz-j4-RPp"/>
+                                            <outlet property="doneButton" destination="CMd-VO-hft" id="khL-iF-Jqc"/>
                                             <outlet property="todoLabel" destination="ldO-Hp-RN1" id="owC-jm-CgQ"/>
                                             <outlet property="todoSubLabel" destination="etx-Vi-8Rn" id="2NC-lZ-zVY"/>
                                         </connections>

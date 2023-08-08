@@ -21,8 +21,6 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
     
     
     
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -36,6 +34,7 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
 
     
     @IBAction func showAlert(_ sender: Any) {
@@ -55,10 +54,11 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         }
         
         
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let cancel = UIAlertAction(title: "취소", style: .destructive)
         
-        alert.addAction(save)
         alert.addAction(cancel)
+        alert.addAction(save)
+      
         
         self.present(alert, animated: true)
     }
