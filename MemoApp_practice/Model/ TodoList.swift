@@ -11,8 +11,8 @@ struct TodoList {
     
     //sample data
     static var list: [Todo] = [
-        Todo(id: 0, content: "안녕하세요", insertDate: Date(), isCompleted: false),
-        Todo(id: 1, content: "꼭 완성한다. 꼭.", insertDate: Date(), isCompleted: true)
+        Todo(id: 0, content: "안녕하세요", doneDate: Date(), isCompleted: false),
+        Todo(id: 1, content: "꼭 완성한다. 꼭.", doneDate: Date(), isCompleted: true)
     ]
     
     static func completeList() -> [Todo] {
@@ -31,3 +31,4 @@ struct TodoList {
     }
     
 }
+

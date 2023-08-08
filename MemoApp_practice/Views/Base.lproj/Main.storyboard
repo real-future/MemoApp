@@ -12,32 +12,35 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TodoViewController" customModule="MemoApp_practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTB-0j-4TZ">
-                                <rect key="frame" x="227" y="560" width="62" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Todo">
-                                    <color key="baseForegroundColor" systemColor="systemPinkColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="dux-iA-84L" kind="show" id="nSD-4s-vD5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-cI-mbx">
-                                <rect key="frame" x="104" y="560" width="65" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done">
-                                    <color key="baseForegroundColor" systemColor="systemPinkColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="hfc-Fy-3Qn" kind="show" id="CcX-UD-zDF"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="prC-Pu-haz">
+                                <rect key="frame" x="107.33333333333333" y="560" width="178.66666666666669" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlm-cI-mbx">
+                                        <rect key="frame" x="0.0" y="0.0" width="64.333333333333329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done">
+                                            <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="hfc-Fy-3Qn" kind="show" id="CcX-UD-zDF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTB-0j-4TZ">
+                                        <rect key="frame" x="114.33333333333334" y="0.0" width="64.333333333333343" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Todo">
+                                            <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="dux-iA-84L" kind="show" id="nSD-4s-vD5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="V00-p4-Xm7">
                                 <rect key="frame" x="32.666666666666657" y="303" width="328" height="84"/>
                                 <constraints>
@@ -49,8 +52,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="V00-p4-Xm7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cds-Lz-76e"/>
+                            <constraint firstItem="V00-p4-Xm7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8mh-XG-GWC"/>
+                            <constraint firstItem="prC-Pu-haz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WOn-2G-aLM"/>
                             <constraint firstItem="V00-p4-Xm7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="epL-Gq-2Sa"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="prC-Pu-haz" secondAttribute="bottom" constant="200" id="ub0-R0-mCR"/>
+                            <constraint firstItem="V00-p4-Xm7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x71-4Z-our"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fxc-7V-rU1"/>
@@ -141,7 +147,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jEH-JV-nuP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbz-3l-7Ys"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vbz-3l-7Ys">
+                            <connections>
+                                <action selector="showAlert:" destination="dux-iA-84L" id="vTb-jM-cee"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Rt5-zN-Zq8" id="ppt-qJ-KRJ"/>

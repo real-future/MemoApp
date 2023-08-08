@@ -10,7 +10,7 @@ import Foundation
 struct Todo {
     var id: Int
     var content: String
-    var insertDate: Date
+    var doneDate: Date 
     var isCompleted: Bool
     
     

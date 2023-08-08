@@ -6,10 +6,6 @@
 //
 
 import UIKit//commit
-print("미래ㄴㅇㅁㄴㅇㄹㅁㄴㄹㅁㄴㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹ")
-print("미래ㄴㅇㅁㄴㅇㄹㅁㄴㄹㅁㄴㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹ")
-print("미래ㄴㅇㅁㄴㅇㄹㅁㄴㄹㅁㄴㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹ")
-print("미래ㄴㅇㅁㄴㅇㄹㅁㄴㄹㅁㄴㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹ")
 
 
 class TodoTableViewCell: UITableViewCell {
