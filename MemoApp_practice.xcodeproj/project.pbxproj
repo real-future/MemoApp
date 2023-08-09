@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8786FEB2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8786FEA2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift */; };
 		D8AA79852A8090710044E3BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79842A8090710044E3BB /* AppDelegate.swift */; };
 		D8AA79872A8090710044E3BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79862A8090710044E3BB /* SceneDelegate.swift */; };
 		D8AA79892A8090710044E3BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79882A8090710044E3BB /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8786FEA2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCompleteTableViewCell.swift; sourceTree = "<group>"; };
 		D8AA79812A8090710044E3BB /* MemoApp_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApp_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA79842A8090710044E3BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8AA79862A8090710044E3BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D8AA79A62A81269B0044E3BB /* TodoTableViewCell.swift */,
+				D8786FEA2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift */,
 				D8AA798A2A8090710044E3BB /* Main.storyboard */,
 			);
 			path = Views;
@@ -188,6 +191,7 @@
 				D8AA79872A8090710044E3BB /* SceneDelegate.swift in Sources */,
 				D8AA79A02A80A0F30044E3BB /* Todo.swift in Sources */,
 				D8AA79AB2A8139320044E3BB /*  TodoList.swift in Sources */,
+				D8786FEB2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift in Sources */,
 				D8AA79A52A80C1EF0044E3BB /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

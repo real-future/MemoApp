@@ -26,7 +26,7 @@ class TodoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-
+        
         // Initialization code
     }
     
@@ -39,53 +39,24 @@ class TodoTableViewCell: UITableViewCell {
     @IBAction func pressedButton(_ sender: Any) {
         print(#function)
         
+        
         guard let todo = todo else { return }
         
-        
-        //        if todo.isCompleted == false {
-        //            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
-        //            TodoList.completeTodo(todo: todo, isComplete: true)
-        //
-        //        }
-        //
-        //
-        //        if todo.isCompleted == true {
-        //            doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
-        //            TodoList.completeTodo(todo: todo, isComplete: false)
-        //
-        //        }
-        
-        print(doneButton.isSelected)
-        
-        
-        doneButton.isSelected.toggle()
-
-
-        
-        if doneButton.isSelected == false {
-            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
-            TodoList.completeTodo(todo: todo, isComplete: true)
-            todoLabel.textColor = UIColor.lightGray
-            todoSubLabel.textColor = UIColor.lightGray
-        }
-        
-        
-        if doneButton.isSelected == true {
+        if doneButton.isSelected  {
             doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
             TodoList.completeTodo(todo: todo, isComplete: false)
             todoLabel.textColor = UIColor.black
             todoSubLabel.textColor = UIColor.black
-            doneButton.configuration?.baseBackgroundColor = .white
+            doneButton.isSelected = false
+            
+        } else {
+            doneButton.configuration?.baseBackgroundColor = .white //배경색 활성화 없애는 것
+            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+            TodoList.completeTodo(todo: todo, isComplete: true)
+            todoLabel.textColor = UIColor.lightGray
+            todoSubLabel.textColor = UIColor.lightGray
+            doneButton.isSelected = true
+            
         }
-        
-       
-        
-        
-        //                doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
-        //                todoLabel.textColor = UIColor.lightGray
-        //                todoSubLabel.textColor = UIColor.lightGray
-        
-        
     }
-    
 }
