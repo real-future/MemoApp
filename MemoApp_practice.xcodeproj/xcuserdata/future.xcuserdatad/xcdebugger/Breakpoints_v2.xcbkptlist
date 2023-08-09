@@ -46,10 +46,42 @@
             filePath = "MemoApp_practice/Views/TodoTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "pressedButton(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "129F5005-5C25-4CC1-8D76-56583E710B76 - 6ed27e0e2c7f596a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoApp_practice.TodoTableViewCell.pressedButton(Any) -&gt; ()"
+                  moduleName = "MemoApp_practice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/future/Desktop/swift/MemoApp/MemoApp_practice/MemoApp_practice/Views/TodoTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+               <Location
+                  uuid = "129F5005-5C25-4CC1-8D76-56583E710B76 - 6ed27e0e2c7f5811"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoApp_practice.TodoTableViewCell.pressedButton(Any) -&gt; ()"
+                  moduleName = "MemoApp_practice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/future/Desktop/swift/MemoApp/MemoApp_practice/MemoApp_practice/Views/TodoTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,8 +94,8 @@
             filePath = "MemoApp_practice/Views/TodoTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "pressedButton(_:)"
             landmarkType = "7">
             <Locations>

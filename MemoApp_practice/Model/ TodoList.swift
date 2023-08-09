@@ -20,6 +20,7 @@ struct TodoList {
         return list.filter { $0.isCompleted == true }
     }
     
+    
     static func completeTodo(todo: Todo, isComplete: Bool) {
         for index in 0 ..< list.count {
             if list[index].id == todo.id {
@@ -28,6 +29,16 @@ struct TodoList {
             }
         }
     }
+    
+    static func editTask(todo: Todo, content: String) {
+        for index in 0 ..< list.count {
+            if list[index].id == todo.id {
+                list[index].content = content
+            }
+        }
+    }
+    
+    
     static func deleteTodo(todo: Todo) {
         list.removeAll(where: {$0.id == todo.id})
     }

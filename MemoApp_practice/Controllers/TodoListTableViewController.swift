@@ -40,11 +40,12 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
     @IBAction func showAlert(_ sender: Any) {
         let alert = UIAlertController(title: "할 일 추가", message: "", preferredStyle: .alert)
         
-        alert.addTextField {(textField:UITextField) in textField.placeholder = "할 일을 입력해 주세요."}
+        alert.addTextField {(textField:UITextField) in textField.placeholder = "20자 이내로 입력해주세요."}
         
         let save = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
             
             if let content = alert.textFields?.first?.text, !content.isEmpty {
+                
                 
                 let newTodo = Todo(id: (TodoList.list.last?.id ?? -1) + 1, content: content, doneDate: Date(), isCompleted: false)
                 TodoList.list.append(newTodo)
@@ -86,6 +87,7 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         cell.todoLabel.text = TodoList.list[indexPath.row].content
         cell.todoSubLabel.text = formatter.string(from: TodoList.list[indexPath.row].doneDate)
         cell.selectionStyle = .none
+        cell.todo = TodoList.list[indexPath.row]
         
         return cell
     }

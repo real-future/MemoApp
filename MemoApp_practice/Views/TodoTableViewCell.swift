@@ -9,8 +9,8 @@ import UIKit//commit
 
 
 class TodoTableViewCell: UITableViewCell {
-  
-
+    
+    
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -18,53 +18,74 @@ class TodoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var todoSubLabel: UILabel!
     
- 
+    
     var todo: Todo?
     
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     @IBAction func pressedButton(_ sender: Any) {
         print(#function)
-
-        //isCompleted
-//            guard let todo else { return }
-//
-//            if todo.isCompleted == false {
-//                doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
-//                TodoList.completeTodo(todo: todo, isComplete: true)
-//
-//            } else {
-//                doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
-//                TodoList.completeTodo(todo: todo, isComplete: false)
-//
-//            }
-
+        
+        guard let todo = todo else { return }
         
         
+        //        if todo.isCompleted == false {
+        //            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        //            TodoList.completeTodo(todo: todo, isComplete: true)
+        //
+        //        }
+        //
+        //
+        //        if todo.isCompleted == true {
+        //            doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
+        //            TodoList.completeTodo(todo: todo, isComplete: false)
+        //
+        //        }
         
-        doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
-        todoLabel.textColor = UIColor.lightGray
+        print(doneButton.isSelected)
+        
+        
+        doneButton.isSelected.toggle()
 
-        todoSubLabel.textColor = UIColor.lightGray
+
+        
+        if doneButton.isSelected == false {
+            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+            TodoList.completeTodo(todo: todo, isComplete: true)
+            todoLabel.textColor = UIColor.lightGray
+            todoSubLabel.textColor = UIColor.lightGray
+        }
+        
+        
+        if doneButton.isSelected == true {
+            doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
+            TodoList.completeTodo(todo: todo, isComplete: false)
+            todoLabel.textColor = UIColor.black
+            todoSubLabel.textColor = UIColor.black
+            doneButton.configuration?.baseBackgroundColor = .white
+        }
+        
+       
+        
+        
+        //                doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        //                todoLabel.textColor = UIColor.lightGray
+        //                todoSubLabel.textColor = UIColor.lightGray
         
         
     }
     
-    
-    
-    
-    
-
-
 }
