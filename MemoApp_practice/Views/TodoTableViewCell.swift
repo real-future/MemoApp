@@ -43,7 +43,7 @@ class TodoTableViewCell: UITableViewCell {
                 
         } else {
             doneButton.configuration?.baseBackgroundColor = .white //배경색 활성화 없애는 것
-            doneButton.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+            doneButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
             todoLabel.textColor = UIColor.lightGray
             todoSubLabel.textColor = UIColor.lightGray
             doneButton.isSelected = true

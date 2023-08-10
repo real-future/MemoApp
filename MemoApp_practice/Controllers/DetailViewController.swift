@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
         return f
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -46,7 +47,8 @@ extension DetailViewController: UITableViewDataSource {
             return cell
             
         default:
-            fatalError() //빈셀을 리턴한다면
+            fatalError() //빈셀을 리턴한다면 끝나도록
+            
             
         }
     }

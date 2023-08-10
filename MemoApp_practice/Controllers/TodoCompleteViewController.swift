@@ -19,10 +19,15 @@ class TodoCompleteViewController: UIViewController {
     }()
 
 
+    @IBOutlet weak var noDoneLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if TodoList.completeList.isEmpty {
+            noDoneLabel.text = "You haven't completed anything yet. \nGo back and create a to-do."
+        }
+        tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
