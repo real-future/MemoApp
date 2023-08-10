@@ -11,7 +11,5 @@ struct Todo {
     var id: Int
     var content: String
     var doneDate: Date 
-    var isCompleted: Bool
-    
-    
+    var isCompleted: Bool 
 }

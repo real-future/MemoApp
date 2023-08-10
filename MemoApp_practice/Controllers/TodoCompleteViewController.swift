@@ -26,7 +26,6 @@ class TodoCompleteViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -37,19 +36,21 @@ extension TodoCompleteViewController: UITableViewDelegate {
 }
 
 extension TodoCompleteViewController: UITableViewDataSource {
-
+    //완료 할 일 행 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TodoList.list.count
+        return TodoList.completeList.count
     }
 
-
+    //완료 할 일 데이터 연결
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let completedList = TodoList.completeList
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! TodoCompleteTableViewCell
-        cell.doneTodoLabel.text = TodoList.list[indexPath.row].content
-        cell.doneTodoTimeLabel.text = formatter.string(from: TodoList.list[indexPath.row].doneDate) //🌟버튼 눌렀을 때 완료 시각으로
+        cell.doneTodoLabel.text = completedList[indexPath.row].content
+        cell.doneTodoTimeLabel.text = formatter.string(from: completedList[indexPath.row].doneDate) //🌟지금은 제작시점 시각 -> 나중에 버튼 눌렀을 때 완료 시각으로 변경하기
         cell.selectionStyle = .none
-        cell.todo = TodoList.completeList()[indexPath.row]
-
+        print(TodoList.completeList)//확인용
+        print(indexPath.row)//확인용
+        cell.todo = completedList[indexPath.row]
         return cell
     }
 }

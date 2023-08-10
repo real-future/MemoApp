@@ -57,7 +57,6 @@
                             <constraint firstItem="prC-Pu-haz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WOn-2G-aLM"/>
                             <constraint firstItem="V00-p4-Xm7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="epL-Gq-2Sa"/>
                             <constraint firstAttribute="bottomMargin" secondItem="prC-Pu-haz" secondAttribute="bottom" constant="200" id="ub0-R0-mCR"/>
-                            <constraint firstItem="V00-p4-Xm7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x71-4Z-our"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fxc-7V-rU1"/>

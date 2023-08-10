@@ -9,28 +9,12 @@ import Foundation
 
 struct TodoList {
     
-    //sample data
-    static var list: [Todo] = [
-        Todo(id: 0, content: "안녕하세요", doneDate: Date(), isCompleted: false),
-        Todo(id: 1, content: "꼭 완성한다. 꼭.", doneDate: Date(), isCompleted: false)
-    ]
+    
+    //할 일 빈 배열 생성
+    static var list: [Todo] = []
     
     
-    static func completeList() -> [Todo] {
-        return list.filter { $0.isCompleted == true }
-    }
-    
-    
-    static func completeTodo(todo: Todo, isComplete: Bool) {
-        for index in 0 ..< list.count {
-            if list[index].id == todo.id {
-                list[index].content = todo.content
-                list[index].isCompleted = isComplete
-                
-            }
-        }
-    }
-    
+    //수정하기 (이제 해야함)
     static func editTask(todo: Todo, content: String) {
         for index in 0 ..< list.count {
             if list[index].id == todo.id {
@@ -40,9 +24,27 @@ struct TodoList {
     }
     
     
+    //완료된 할 일
+    static var completeList: [Todo] {
+        return list.filter { $0.isCompleted == true }
+    }
+    
+    
+    //완료된 할 일 속성 변경해주는 함수
+    static func completeTodo(todo: Todo, isComplete: Bool) {
+        for index in 0 ..< list.count {
+            if list[index].id == todo.id {
+                list[index].content = todo.content
+                list[index].isCompleted = isComplete
+            }
+        }
+    }
+    
+    
+    //할 일 삭제
     static func deleteTodo(todo: Todo) {
         list.removeAll(where: {$0.id == todo.id})
     }
-    
 }
+
 
