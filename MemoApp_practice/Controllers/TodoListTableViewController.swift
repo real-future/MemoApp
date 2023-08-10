@@ -20,6 +20,7 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         let f = DateFormatter()
         f.dateStyle = .long
         f.timeStyle = .short
+        f.locale = Locale(identifier: "en")
         return f
     }()
     
