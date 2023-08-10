@@ -22,6 +22,17 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
     }()
     
     
+    //세그웨이가 연결된 화면을 생성하고, 화면 전환 직전에 호출됨
+    //세그웨이로 연결된 화면에서 데이터 전달할 때에 대부분 이런 패턴으로 전달해
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //sender : 연결된 화면의 cell
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DetailViewController {
+                vc.todo = TodoList.list[indexPath.row]
+            }
+        } //source는 세그웨이 실행하는 화면, destination은 새롭게 표시되는 화면
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
