@@ -9,9 +9,9 @@ import Foundation
 
 enum Names {
     struct greetingText {
-        static let noList = "There are no lists to display.\nTry adding a new task :)"
+        static let noList = "There are no lists to display\nTry adding a new task :)"
         static let yesList = ""
-        static let noDoneList = "You haven't completed anything yet."
+        static let noDoneList = "You haven't completed anything yet"
         static let yesDoneList = ""
     }
     
