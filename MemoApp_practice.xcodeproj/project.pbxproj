@@ -20,6 +20,7 @@
 		D8AA79A72A81269B0044E3BB /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79A62A81269B0044E3BB /* TodoTableViewCell.swift */; };
 		D8AA79AB2A8139320044E3BB /*  TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79AA2A8139320044E3BB /*  TodoList.swift */; };
 		D8DFD6342A84B35300B97475 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DFD6332A84B35300B97475 /* DetailViewController.swift */; };
+		D8F704DC2A85BCFD002AA3AC /* DoneDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F704DB2A85BCFD002AA3AC /* DoneDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D8AA79A62A81269B0044E3BB /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		D8AA79AA2A8139320044E3BB /*  TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TodoList.swift"; sourceTree = "<group>"; };
 		D8DFD6332A84B35300B97475 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D8F704DB2A85BCFD002AA3AC /* DoneDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				D8AA79A42A80C1EF0044E3BB /* TodoListTableViewController.swift */,
 				D8AA799C2A809F580044E3BB /* TodoCompleteViewController.swift */,
 				D8DFD6332A84B35300B97475 /* DetailViewController.swift */,
+				D8F704DB2A85BCFD002AA3AC /* DoneDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				D8AA79852A8090710044E3BB /* AppDelegate.swift in Sources */,
 				D8AA79872A8090710044E3BB /* SceneDelegate.swift in Sources */,
 				D8AA79A02A80A0F30044E3BB /* Todo.swift in Sources */,
+				D8F704DC2A85BCFD002AA3AC /* DoneDetailViewController.swift in Sources */,
 				D8AA79AB2A8139320044E3BB /*  TodoList.swift in Sources */,
 				D8DFD6342A84B35300B97475 /* DetailViewController.swift in Sources */,
 				D8786FEB2A8353A400DB4E51 /* TodoCompleteTableViewCell.swift in Sources */,

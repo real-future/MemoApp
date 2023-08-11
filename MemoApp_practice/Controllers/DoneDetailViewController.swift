@@ -1,13 +1,13 @@
 //
-//  DetailViewController.swift
+//  DoneDetailViewController.swift
 //  MemoApp_practice
 //
-//  Created by FUTURE on 2023/08/10.
+//  Created by FUTURE on 2023/08/11.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DoneDetailViewController: UIViewController {
 
     //TodoListTableViewController에서 전달한 메모
     var todo: Todo?
@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
 }
 
 
-extension DetailViewController: UITableViewDataSource {
+extension DoneDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -35,13 +35,13 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "doneCell", for: indexPath)
             cell.textLabel?.text = todo?.content //✅
             
             return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "doneDateCell", for: indexPath)
             cell.textLabel?.text = formatter.string(for: todo?.doneDate)
             
             return cell
@@ -52,6 +52,5 @@ extension DetailViewController: UITableViewDataSource {
             
         }
     }
-    
     
 }

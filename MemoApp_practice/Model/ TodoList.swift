@@ -14,7 +14,7 @@ struct TodoList {
     static var list: [Todo] = []
     
     
-    //수정하기 (이제 해야함)
+    //수정하기 (이제 해야함)✅
     static func editTask(todo: Todo, content: String) {
         for index in 0 ..< list.count {
             if list[index].id == todo.id {

@@ -44,14 +44,14 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         if TodoList.list.isEmpty  {
             noTodoTextLabel.text = "There are no lists to display.\nTry adding a new task :)"
         }
-
+        
         tableView.dataSource = self
         tableView.rowHeight = 80
         print("# \(TodoList.list)") //확인용
     }
     
     
-
+    
     
     
     
@@ -72,8 +72,6 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
                 self?.noTodoTextLabel.text = ""
             }
         }
-        
-        
         
         //버튼 생성
         alert.addAction(cancel)
@@ -99,7 +97,7 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         print("# \(cell.doneButton.isSelected)") //확인용
         
         noTodoTextLabel.text = ""
-      
+        
         
         //홈으로 갔다가 돌아와도 화면 유지될 수 있도록
         let isSelected = TodoList.list[indexPath.row].isCompleted
@@ -121,31 +119,50 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         cell.todoSubLabel.text = formatter.string(from: TodoList.list[indexPath.row].doneDate)
         cell.selectionStyle = .none
         cell.todo = TodoList.list[indexPath.row]
-
+        
         return cell
     }
     
     
-
+    
     
     //테이블뷰 행 편집할 때 써야함. UITableViewDelegate 프로토콜의 일부
+    //삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            noTodoTextLabel.text = "There are no lists to display.\nTry adding a new task :)"
-            TodoList.list.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // 삭제 알림창을 보여주는 코드
+            let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Are you sure you want to delete me?", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+            let deleteAction = UIAlertAction(title: "Delete", style: .default) { [weak self] _ in
+                self?.noTodoTextLabel.text = "There are no lists to display.\nTry adding a new task :)"
+                TodoList.list.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+            deleteAlert.addAction(cancelAction)
+            deleteAlert.addAction(deleteAction)
+            
+            //강조 색상 커스텀
+            deleteAlert.view.tintColor = UIColor.orange
+            
+            self.present(deleteAlert, animated: true, completion: nil)
         }
     }
 }
-    
-    
-    extension TodoListTableViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
+
+
+
+
+
+extension TodoListTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
-    
-  
+}
+
+
+
+
 
