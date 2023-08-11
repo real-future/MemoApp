@@ -36,7 +36,7 @@ extension DoneDetailViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "doneCell", for: indexPath)
-            cell.textLabel?.text = todo?.content //✅
+            cell.textLabel?.text = todo?.content
             
             return cell
             

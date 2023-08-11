@@ -14,11 +14,6 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var todoButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
-
-    
-    
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()

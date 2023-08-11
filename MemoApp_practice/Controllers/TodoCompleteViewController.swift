@@ -9,19 +9,19 @@ import UIKit
 
 
 class TodoCompleteViewController: UIViewController {
-
-
+    
+    
     let formatter: DateFormatter = {
-       let f = DateFormatter()
+        let f = DateFormatter()
         f.dateStyle = .long
         f.timeStyle = .short
         return f
     }()
-
-
+    
+    
     @IBOutlet weak var noDoneLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    
     
     //prepare : 세그웨이가 연결된 화면을 생성하고, 화면 전환 직전에 호출됨
     //세그웨이로 연결된 화면에서 데이터 전달할 때에 대부분 이런 패턴으로 전달해
@@ -35,16 +35,14 @@ class TodoCompleteViewController: UIViewController {
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //비어 있을 때 안내 문구 나오도록
         if TodoList.completeList.isEmpty {
-            noDoneLabel.text = "You haven't completed anything yet."
+            noDoneLabel.text = Names.greetingText.noDoneList
         } else {
-            noDoneLabel.text = ""
+            noDoneLabel.text = Names.greetingText.yesDoneList
         }
         
         tableView.rowHeight = 80
@@ -60,21 +58,27 @@ class TodoCompleteViewController: UIViewController {
         if editingStyle == .delete {
             
             // 삭제 알림창을 보여주는 코드
-            let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Are you sure you want to delete me?", preferredStyle: .alert)
+            let deleteAlert = UIAlertController(title: Names.deleteAlert.title, message: Names.deleteAlert.message, preferredStyle: .alert)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-            let deleteAction = UIAlertAction(title: "Delete", style: .default) { [weak self] _ in
-                self?.noDoneLabel.text = "You haven't completed anything yet."
+            let cancel = UIAlertAction(title: "cancel", style: .default)
+            let delete = UIAlertAction(title: "delete", style: .default) { _ in
                 TodoList.list.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                
+                
+                // 이 부분에서 TodoList의 길이를 확인하고, 안내 메세지 띄우기
+                if TodoList.list.isEmpty {
+                    self.noDoneLabel.text = Names.greetingText.noDoneList
+                } else {
+                    self.noDoneLabel.text = Names.greetingText.yesDoneList
+                }
             }
-            
-            deleteAlert.addAction(cancelAction)
-            deleteAlert.addAction(deleteAction)
+        
+            deleteAlert.addAction(cancel)
+            deleteAlert.addAction(delete)
             
             //강조 색상 커스텀
             deleteAlert.view.tintColor = UIColor.orange
-            
             self.present(deleteAlert, animated: true, completion: nil)
         }
     }
@@ -96,13 +100,13 @@ extension TodoCompleteViewController: UITableViewDataSource {
     }
     
     
-
+    
     //완료 할 일 데이터 연결
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let completedList = TodoList.completeList
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! TodoCompleteTableViewCell
         cell.doneTodoLabel.text = completedList[indexPath.row].content
-        cell.doneTodoTimeLabel.text = formatter.string(from: completedList[indexPath.row].doneDate) //🌟지금은 제작시점 시각 -> 나중에 버튼 눌렀을 때 완료 시각으로 변경하기
+        cell.doneTodoTimeLabel.text = formatter.string(from: completedList[indexPath.row].doneDate)
         cell.selectionStyle = .none
         print(TodoList.completeList)//확인용
         print(indexPath.row)//확인용

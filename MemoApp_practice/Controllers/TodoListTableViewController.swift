@@ -42,7 +42,7 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         
         //메모 비어 있을 때, 메세지 띄우기
         if TodoList.list.isEmpty  {
-            noTodoTextLabel.text = "There are no lists to display.\nTry adding a new task :)"
+            noTodoTextLabel.text = Names.greetingText.noList
         }
         
         tableView.dataSource = self
@@ -57,30 +57,29 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
     
     //메모 추가 화면(alert view 활용)
     @IBAction func showAlert(_ sender: Any) {
-        let alert = UIAlertController(title: "Add a Task", message: "", preferredStyle: .alert)
-        alert.addTextField {(textField:UITextField) in textField.placeholder = "Please Enter Anything"}
+        let addAlert = UIAlertController(title: Names.addAlert.title, message: Names.addAlert.message, preferredStyle: .alert)
+        addAlert.addTextField {(textField:UITextField) in textField.placeholder = Names.addAlert.placeholder}
         
         //취소, 저장 버튼
         let cancel = UIAlertAction(title: "cancel", style: .default)
         let save = UIAlertAction(title: "save", style: .default) { [weak self] _ in
             
             //비어 있을 때에는 저장 안 됨
-            if let content = alert.textFields?.first?.text, !content.isEmpty {
+            if let content = addAlert.textFields?.first?.text, !content.isEmpty {
                 let newTodo = Todo(id: (TodoList.list.last?.id ?? -1) + 1, content: content, doneDate: Date(), isCompleted: false)
                 TodoList.list.append(newTodo)
                 self?.tableView.reloadData()
-                self?.noTodoTextLabel.text = ""
+                self?.noTodoTextLabel.text = Names.greetingText.yesList
             }
         }
         
-        //버튼 생성
-        alert.addAction(cancel)
-        alert.addAction(save)
+        addAlert.addAction(cancel)
+        addAlert.addAction(save)
         
         //강조 색상 커스텀
-        alert.view.tintColor = UIColor.orange
+        addAlert.view.tintColor = UIColor.orange
         
-        self.present(alert, animated: true)
+        self.present(addAlert, animated: true)
     }
     
     
@@ -96,12 +95,12 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoTableViewCell
         print("# \(cell.doneButton.isSelected)") //확인용
         
-        noTodoTextLabel.text = ""
+        noTodoTextLabel.text = Names.greetingText.yesList
         
         
         //홈으로 갔다가 돌아와도 화면 유지될 수 있도록
         let isSelected = TodoList.list[indexPath.row].isCompleted
-        let image = isSelected == true ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "circle")
+        let image = isSelected == true ? UIImage(systemName: Names.shape.checkmarkcirclefill) : UIImage(systemName: Names.shape.circle)
         
         if isSelected {
             cell.todoLabel.textColor = UIColor.gray
@@ -132,14 +131,21 @@ class TodoListTableViewController: UIViewController, UITableViewDataSource {
         if editingStyle == .delete {
             
             // 삭제 알림창을 보여주는 코드
-            let deleteAlert = UIAlertController(title: "Confirm Delete", message: "Are you sure you want to delete me?", preferredStyle: .alert)
+            let deleteAlert = UIAlertController(title: Names.deleteAlert.title, message: Names.deleteAlert.message, preferredStyle: .alert)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-            let deleteAction = UIAlertAction(title: "Delete", style: .default) { [weak self] _ in
-                self?.noTodoTextLabel.text = "There are no lists to display.\nTry adding a new task :)"
+            let cancelAction = UIAlertAction(title: "cancel", style: .default)
+            let deleteAction = UIAlertAction(title: "delete", style: .default) {_ in
                 TodoList.list.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-            }
+                
+                // 이 부분에서 TodoList의 길이를 확인하고, 안내 메세지 띄우기
+                            if TodoList.list.isEmpty {
+                                self.noTodoTextLabel.text = Names.greetingText.noList
+                            } else {
+                                self.noTodoTextLabel.text = Names.greetingText.yesList
+                            }
+                        }
+            
             
             deleteAlert.addAction(cancelAction)
             deleteAlert.addAction(deleteAction)

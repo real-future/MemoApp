@@ -21,6 +21,7 @@
 		D8AA79AB2A8139320044E3BB /*  TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AA79AA2A8139320044E3BB /*  TodoList.swift */; };
 		D8DFD6342A84B35300B97475 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DFD6332A84B35300B97475 /* DetailViewController.swift */; };
 		D8F704DC2A85BCFD002AA3AC /* DoneDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F704DB2A85BCFD002AA3AC /* DoneDetailViewController.swift */; };
+		D8F704DE2A85DBE5002AA3AC /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F704DD2A85DBE5002AA3AC /* Names.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D8AA79AA2A8139320044E3BB /*  TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " TodoList.swift"; sourceTree = "<group>"; };
 		D8DFD6332A84B35300B97475 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D8F704DB2A85BCFD002AA3AC /* DoneDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneDetailViewController.swift; sourceTree = "<group>"; };
+		D8F704DD2A85DBE5002AA3AC /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				D8AA799F2A80A0F30044E3BB /* Todo.swift */,
 				D8AA79AA2A8139320044E3BB /*  TodoList.swift */,
+				D8F704DD2A85DBE5002AA3AC /* Names.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				D8AA79852A8090710044E3BB /* AppDelegate.swift in Sources */,
 				D8AA79872A8090710044E3BB /* SceneDelegate.swift in Sources */,
 				D8AA79A02A80A0F30044E3BB /* Todo.swift in Sources */,
+				D8F704DE2A85DBE5002AA3AC /* Names.swift in Sources */,
 				D8F704DC2A85BCFD002AA3AC /* DoneDetailViewController.swift in Sources */,
 				D8AA79AB2A8139320044E3BB /*  TodoList.swift in Sources */,
 				D8DFD6342A84B35300B97475 /* DetailViewController.swift in Sources */,

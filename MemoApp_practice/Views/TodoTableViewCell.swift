@@ -34,21 +34,19 @@ class TodoTableViewCell: UITableViewCell {
         guard let todo = todo else { return }
         
         if doneButton.isSelected  {
-            doneButton.setImage(UIImage(systemName: "circle"), for: .normal)
+            doneButton.setImage(UIImage(systemName: Names.shape.circle), for: .normal)
             todoLabel.textColor = UIColor.black
             todoSubLabel.textColor = UIColor.black
             doneButton.isSelected = false
             TodoList.completeTodo(todo: todo, isComplete: false)
-            print(TodoList.list,"isSelcted는",doneButton.isSelected)
                 
         } else {
             doneButton.configuration?.baseBackgroundColor = .white //배경색 활성화 없애는 것
-            doneButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            doneButton.setImage(UIImage(systemName: Names.shape.checkmarkcirclefill), for: .normal)
             todoLabel.textColor = UIColor.lightGray
             todoSubLabel.textColor = UIColor.lightGray
             doneButton.isSelected = true
             TodoList.completeTodo(todo: todo, isComplete: true)
-            print(TodoList.list,"isSelcted는",doneButton.isSelected)
         }
     }
 }
