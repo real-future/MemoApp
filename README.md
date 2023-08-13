@@ -24,7 +24,8 @@
 
 ## 주요 화면
 
-![todo_png](https://github.com/real-future/memo-app/assets/85066307/ee63a2ab-a2c6-4d30-8e5e-4a98b4107c30)
+<img width="400" alt="todo_png" src="https://github.com/real-future/memo-app/assets/85066307/41bc7a60-f12c-4845-8c22-161a12f1f04f">
+
 ![todo_gif](https://github.com/real-future/memo-app/assets/85066307/5ccf7cf8-ab41-4043-8fb3-c4c685904119)
 
 
